@@ -77,5 +77,30 @@ addBook({
     ongoing: false
   });
   
-  console.log(library);  
+
+
+  function listBooks(){
+
+for (const book of library){
+
+    console.log(
+      `"${book.title}" by ${book.author}, ${book.pages} pages, ongoing: ${book.ongoing}`)
+}
+
+  }
+//Test
+
+listBooks();
+
+function findBook(title: string): Book | undefined {
+    return library.find(book => book.title === title);
+  }
   
+  const result = findBook("The Alchemist");
+
+if (result) {
+  console.log(`Found: "${result.title}" by ${result.author}`);
+} else {
+  console.log("Book not found.");
+}
+
